@@ -1,0 +1,82 @@
+.navbar {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  order: 1;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 3px 0;
+  transition: transform 0.3s ease; /* Анимация для гамбургера */
+}
+
+.menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.menu li {
+  margin-right: 20px;
+}
+
+.menu li:last-child {
+  margin-right: 0;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.menu-toggle.active + .menu > li {
+  padding: 20px 0;
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .menu {
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+  }
+
+  .menu.active {
+    display: flex;
+    align-items: center;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* Стили для крестика (активного состояния) */
+  .menu-toggle.active .bar1 {
+    transform: rotate(-50deg) translate(-7px, 6px);
+  }
+
+  .menu-toggle.active .bar2 {
+    opacity: 0;
+  }
+
+  .menu-toggle.active .bar3 {
+    transform: rotate(50deg) translate(-7px, -6px);
+  }
+}
