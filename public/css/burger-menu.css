@@ -19,7 +19,7 @@
   height: 3px;
   background-color: #fff;
   margin: 3px 0;
-  transition: transform 0.3s ease; /* Анимация для гамбургера */
+  transition: transform 0.3s ease;
 }
 
 .menu {
